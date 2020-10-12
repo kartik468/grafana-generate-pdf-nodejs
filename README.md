@@ -7,7 +7,7 @@ https://gist.github.com/svet-b/1ad0656cd3ce0e1a633e16eb20f66425
 
 It was generating blank panels after certain point when dashboard is tall. This code addresses this issue.
 
-# Process
+## Examples
 Environment: Set the Grafana server URL, username, and password, and the output filename as environment variables.
 
 ``` sh
