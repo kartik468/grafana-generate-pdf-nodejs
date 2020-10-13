@@ -1,11 +1,11 @@
-# Grafana PDF using Puppeteer
+# Grafana PDF Report using Puppeteer
 
-Generate pdf for grafana dashboards using nodejs and puppeteer.
+Generate pdf report for grafana dashboards using nodejs and puppeteer.
 
 I took the base code from 
 https://gist.github.com/svet-b/1ad0656cd3ce0e1a633e16eb20f66425
 
-It was generating blank panels after certain point when dashboard is tall. This code addresses this issue.
+It was generating blank panels after certain point when dashboard is tall. This repo code addresses this issue.
 
 ## Examples
 Environment: Set the Grafana server URL, username, and password, and the output filename as environment variables.
