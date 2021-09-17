@@ -7,6 +7,13 @@ https://gist.github.com/svet-b/1ad0656cd3ce0e1a633e16eb20f66425
 
 It was generating blank panels after certain point when dashboard is tall. This repo code addresses this issue.
 
+Steps to run
+
+- latest version of node should be installed
+- go inside root folder of this project where package.json is located.
+- run 'npm clean install'
+- see below examples to run
+
 ## Examples
 Environment: Set the Grafana server URL, username, and password, and the output filename as environment variables.
 
