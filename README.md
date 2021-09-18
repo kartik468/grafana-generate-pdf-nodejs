@@ -11,8 +11,9 @@ Steps to run
 
 - latest version of node should be installed
 - go inside root folder of this project where package.json is located.
-- run 'npm clean install'
+- for the first time run 'npm clean install'
 - see below examples to run
+
 
 ## Examples
 Environment: Set the Grafana server URL, username, and password, and the output filename as environment variables.
