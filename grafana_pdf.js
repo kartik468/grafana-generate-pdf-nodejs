@@ -26,8 +26,11 @@ const auth_header = 'Basic ' + new Buffer.from(auth_string).toString('base64');
   try {
 
     const browser = await puppeteer.launch({
-      headless: true
+      headless: true,
+      // for docker few folks had issues. so added below line
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
+    
     const page = await browser.newPage();
 
     // Set basic auth headers
@@ -64,7 +67,7 @@ const auth_header = 'Basic ' + new Buffer.from(auth_string).toString('base64');
       return document.getElementsByClassName('react-grid-layout')[0].getBoundingClientRect().bottom;
     }) + 20;
 
-    // auto scroll to the bottom to solve long grafana dashboard
+    // == auto scroll to the bottom to solve long grafana dashboard start
     async function autoScroll(page) {
       await page.evaluate(async () => {
         await new Promise((resolve, reject) => {
@@ -97,11 +100,8 @@ const auth_header = 'Basic ' + new Buffer.from(auth_string).toString('base64');
       });
     }
 
-    // page.evaluate(_ => {
-    //   window.scrollBy(0, window.innerHeight);
-    // });
-
     await autoScroll(page);
+    // == auto scroll to the bottom to solve long grafana dashboard end
 
     await page.pdf({
       path: outfile,
