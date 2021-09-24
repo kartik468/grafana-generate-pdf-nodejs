@@ -74,9 +74,11 @@ const auth_header = 'Basic ' + new Buffer.from(auth_string).toString('base64');
           var timer = setInterval(() => {
             var scrollHeight = height_px;
 
-            var element = document.querySelector('.view');
+            // select the scrollable view
+            // in newer version of grafana the scrollable div is 'scrollbar-view'
+            var scrollableEl = document.querySelector('.view') || document.querySelector('.scrollbar-view');
             // element.scrollBy(0, distance);
-            element.scrollBy({
+            scrollableEl.scrollBy({
               top: distance,
               left: 0,
               behavior: 'smooth'
